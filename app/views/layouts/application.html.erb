@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+        <%= image_tag('logo.png', size: "100") %>
+      </a>
+
+      <% if current_user %>
+      <form class="form-inline">
+        <p>
+          <%= image_tag(current_user.image, size: "40", class: "avatar")%>
+          <%= current_user.name %>
+        </p>
+      </form>
+      <% else %>
+      <form class="form-inline">
+        <a class="btn btn-outline-primary" href="/login" role="button">
+        Login
+        </a>
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-success" href="/users/sign_out" role="button">
+          Sign Up
+          </a>
+        </div>
+      </form>
+      <% end %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

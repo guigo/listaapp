@@ -1,0 +1,55 @@
+body{
+   background: #f5f5f5;
+}
+.navbar{
+   border-bottom: 1px solid #ecbad2;
+}
+
+.bg {
+  background-image: url("./background.jpg");
+  height: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
+  border: none !important;
+}
+
+.avatar{
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.card{
+  margin-top: 30px;
+  .card-header{
+    color: #ecbad2;
+    background: none;
+    border: none;
+      h1{
+       font-size: 24px;
+       line-height: 28px;
+       padding-right: 10px;
+       margin-bottom: 0;
+    }
+  }
+  .card-body{
+     font-size: 16px;
+     table, tr, td{
+        i{
+          font-size: 24px;
+        }
+        .map{
+          color: #ecbad2;
+        }
+       .add{
+         color: green;
+       }
+       .remove{
+         color: red;
+      }
+   }
+  }
+}
