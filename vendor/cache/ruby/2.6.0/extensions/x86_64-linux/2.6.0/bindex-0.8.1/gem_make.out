@@ -1,0 +1,15 @@
+current directory: /home/guilherme/Documentos/Projetos/listaapp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/home/guilherme/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/guilherme/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-19681-sha4x2.rb extconf.rb
+creating Makefile
+
+current directory: /home/guilherme/Documentos/Projetos/listaapp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/guilherme/Documentos/Projetos/listaapp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/guilherme/Documentos/Projetos/listaapp/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20191112-19681-gpz6b1/skiptrace/internal
