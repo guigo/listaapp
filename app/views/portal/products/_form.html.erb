@@ -1,0 +1,31 @@
+<%= form_for([:portal, @product]) do |f| %>
+  <div class="row">
+    <div class="col-md-3 col-12 form-group">
+       <%= f.label :code %><br />
+       <%= f.text_field :code, autofocus: true, class: "form-control" %>
+     </div>
+     <div class="col-md-9 col-12 form-group">
+        <%= f.label :description %><br />
+        <%= f.text_field :description, autofocus: true, class: "form-control" %>
+      </div>
+   </div>
+  <div class="row">
+      <div class="col-md-6 col-12 form-group">
+        <%= f.label :location %><br />
+        <%= f.text_field :location, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="col-md-3 col-12 form-group">
+        <%= f.label :amount%><br />
+        <%= f.text_field :amount, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="col-md-3 col-12 form-group">
+        <%= f.label :price %><br />
+        <%= f.text_field :price, autofocus: true, class: "form-control" %>
+      </div>
+  </div>
+    <br />
+  <div class="actions">
+      <%= link_to "Cancelar", portal_products_path, class: "btn btn-default pull-right" %>
+      <%= f.submit "Salvar", class: "btn btn-lista pull-right" %>
+  </div>
+<% end %>

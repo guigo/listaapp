@@ -1,0 +1,39 @@
+<div class="container" style="margin-top: 2px;">
+  <div class="col-md-9 col-12 mx-auto">
+    <div class="card">
+      <div class="card-header">
+         <h1>Produtos
+             <%= link_to 'Novo', new_portal_product_path, class: 'btn btn-lista float-right' %>
+         </h1>
+      </div>
+       <div class="card-body">
+         <div class="card-body">
+           <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Code</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                 <% @products.each do |p| %>
+                   <tr>
+                      <td><%= p.code %></td>
+                      <td><%= p.description %></td>
+                      <td><%= p.amount %></td>
+                      <td><%= p.price %></td>
+                       <td>
+                         <%= link_to 'Edit', edit_portal_product_path(p) %>
+                       </td>
+                    </tr>
+                 <% end %>
+              </tbody>
+            </table>
+       </div>
+     </div>
+    </div>
+  </div>
+</div>
