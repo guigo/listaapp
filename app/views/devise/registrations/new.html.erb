@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-lg-2 mx-auto">
+    <div class="text-center">
+      <%= link_to image_tag("logo.png",  size: "120"),root_path, class: 'login-brand' %>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+            <br />
+            <div class="actions">
+              <%= f.submit "Sign up", class: "btn btn-block btn-lista"%>
+            </div>
+         <% end %>
+        </div>
+      </div>
+      <hr />
+      <div class="card">
+        <div class="card-body">
+          <div class="col-xs-6 col-xs-offset-3">
+             <%= link_to user_facebook_omniauth_callback_path(), class: "btn btn-block btn-fb" do %>
+                    <%= fa_icon "facebook-f", class:"text-left" %>
+                    <span style="padding-left: 10px;">Sign in with Facebook</span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="card">
+        <div class="card-body text-center">
+          Já tem uma conta? <%= link_to 'Entre',login_path, class: 'btn' %>
+        </div>
+      </div>
+    </div>
+</div>
