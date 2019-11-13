@@ -3,11 +3,14 @@ body{
 }
 
 .bg {
-  background-image: url("./background.jpg");
+  background-image: url("https://i.ibb.co/d4pq0kp/background.jpg");
   height: 75%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 30px;
   border: none !important;
+}
+
+.banner{
+  height: 75%;
 }
