@@ -1,5 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+     "navbar"
+      "main"
+      "footer";
+    height: 100vh;
+  }
+
+header{
+      grid-area: header;
+      background-color: #fff;
+    }
+
+.main {
+      grid-area: main;
+      padding-left: 50px;
+      padding-right: 50px;
+      width: 100%;
+      margin-top: -30px;
+      position: relative;
+}
 .navbar{
+   grid-area: navbar;
    border-bottom: 1px solid #ecbad2;
+   background: #fff !important;
+   margin-bottom: 30px;
    a{
      text-decoration: none;
      color: #000;
@@ -10,6 +35,11 @@
   }
 }
 
+.shopping-cart{
+  font-size: 24px;
+  color: #ecbad2;
+}
+
 .avatar{
   vertical-align: middle;
   width: 35px;
@@ -17,8 +47,33 @@
   border-radius: 50%;
 }
 
+.background{
+      // background-image: url("https://lista.havan.com.br/Content/Images/casal-floresta.jpg");
+      background-image: url("http://tiamarlene.com.br/wp-content/uploads/2017/08/PapelParedeSiteCul.fw_.png");
+      height: 200px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .header-perfil{
+         height: 100px;
+         .avatar-perfil{
+           vertical-align: middle;
+           width: 120px;
+           height: 120px;
+           border-radius: 50%;
+           margin: 50px;
+         }
+      }
+}
+
+.header-bottom{
+   height: 50px;
+   background: #fff;
+   margin-bottom: 10px;
+}
+
 .card{
-  margin-top: 30px;
+  margin-top: 10px;
   .card-header{
     color: #ecbad2;
     background: none;
@@ -32,6 +87,19 @@
   }
   .card-body{
      font-size: 16px;
+     .card-text{
+       color: #6c757d;
+       font-weight: 400;
+       font-size: 16px;
+       line-height: 18px;
+       min-height: 35px;
+     }
+     .price{
+        color: #333;
+        font-size: 18px;
+        line-height: 1.2;
+        vertical-align: middle;
+     }
      table, tr, td{
         i{
           font-size: 24px;
