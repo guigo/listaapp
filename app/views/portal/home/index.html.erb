@@ -1,6 +1,6 @@
 <div class="container">
   <div class="background">
-    <div class="col-md-3">
+    <div class="col-md-3 col-xs-12">
      <div class="header-perfil">
         <%= image_tag('no-image-available.jpg', class: "avatar-perfil")%>
      </div>
@@ -11,7 +11,7 @@
       <div class="col-md-3">
         <a href="#" class="btn btn-lista">Imprimir Lista</a>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 col-xs-12">
         <small>
            <strong> Local: </strong>Av. Comendador Thomaz Fortunato Nº 2000, Praia dos Namorador - Americana <br />
            <strong> Data do Evento: </strong> 15 de dezembro de 2019
@@ -22,7 +22,7 @@
            <%= fa_icon "shopping-cart", class: 'shopping-cart' %>&nbsp;&nbsp;&nbsp;<small>(3)</small>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCar" style="width: 330px;">
-          <div class="col-md-12">
+          <div class="col-md-12 col-xs-12 col-12">
             <ul class="list-car">
               <li  class="nav-item">
                 Porta Temperos c/5 pcs Inox/Vidro
@@ -50,7 +50,7 @@
   <hr />
   <div class="row">
     <% @products.each do |p| %>
-    <div class="col-md-3 col-12">
+    <div class="col-md-3 col-xs-12 col-12">
       <div class="card">
          <%= image_tag('no-image-available.jpg', class: "card-img-top")%>
          <div class="card-body">
