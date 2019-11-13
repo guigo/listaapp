@@ -19,16 +19,21 @@
                 </tr>
               </thead>
               <tbody>
+                 <% @products.each do |p| %>
                 <tr>
                   <td>
                     <a href="#" class="map">
                     <%= fa_icon "map" %>
                    </a>                  </td>
                   <td>
-                    Jarra de Suco ref(000000000001)
+                    <%= p.description %>( REF: <%= p.code %>)
                   </td>
-                  <td> 2 </td>
-                  <td>R$ 100,00</td>
+                  <td>
+                    <%= p.amount %>
+                  </td>
+                  <td>
+                     R$ <%= p.price %>
+                  </td>
                   <td>
                     <button class="btn btn-default add">
                        <%= fa_icon "plus-circle" %>
@@ -38,20 +43,7 @@
                     </button>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <a href="#" class="map">
-                    <%= fa_icon "map" %>
-                   </a>                  </td>
-                  <td>
-                    <del>Pipoqueira ref(000000000002)</del>
-                  </td>
-                  <td> 0 </td>
-                  <td>R$ 100,00</td>
-                  <td>
-                     <%= image_tag(current_user.image, size: "20", class: "avatar")%>
-                  </td>
-                </tr>
+                <% end %>
               </tbody>
             </table>
             <button class="btn btn-block btn-lista">
