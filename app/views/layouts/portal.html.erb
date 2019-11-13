@@ -12,13 +12,14 @@
   <body>
    <div class="grid-container">
       <nav class="navbar bg-light">
+        <div class="container">
         <a class="navbar-brand" href="/">
           <%= image_tag('logo.png', size: "60") %>
         </a>
         <% if current_user %>
-        <div class="col-md-1 pull-right">
+        <div class="col-md-3">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
               <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownCar" data-toggle="dropdown">
                    <%= fa_icon "shopping-cart", class: 'shopping-cart' %>&nbsp;&nbsp;&nbsp;<small>(3)</small>
@@ -53,8 +54,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-               <div class="dropdown">
+            <div class="col-md-9">
+               <div class="dropdown pull-right">
                   <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
                     <%= image_tag(current_user.image ?  current_user.image : 'https://caruarucity.com.br/wp-content/uploads/2016/12/avatar-vazio.jpg', size: "30", class: "avatar")%>
                     <%= current_user.name %>                  </a>
@@ -77,6 +78,7 @@
               </div>
             </form>
           <% end %>
+          </div>
         </nav>
         <%= yield %>
       </div>
