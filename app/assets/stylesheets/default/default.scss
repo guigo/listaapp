@@ -47,6 +47,24 @@ header{
   border-radius: 50%;
 }
 
+.list-car{
+  font-size: 12px;
+  list-style-type: none;
+  padding-left: 0px !important;
+  li{
+    text-align: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 0px !important;
+    a{
+       font-size: 18px;
+       :hover, :focus{
+        color:#ecbad2
+       }
+     }
+  }
+}
+
 .background{
       // background-image: url("https://lista.havan.com.br/Content/Images/casal-floresta.jpg");
       background-image: url("http://tiamarlene.com.br/wp-content/uploads/2017/08/PapelParedeSiteCul.fw_.png");
