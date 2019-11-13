@@ -56,9 +56,8 @@
             <div class="col-md-6">
                <div class="dropdown">
                   <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-                    <%= image_tag(current_user.image ? urrent_user.image.exists : 'https://caruarucity.com.br/wp-content/uploads/2016/12/avatar-vazio.jpg', size: "30", class: "avatar")%>
-                    <%= current_user.name %>
-                  </a>
+                    <%= image_tag(current_user.image ?  current_user.image : 'https://caruarucity.com.br/wp-content/uploads/2016/12/avatar-vazio.jpg', size: "30", class: "avatar")%>
+                    <%= current_user.name %>                  </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                     <%= link_to 'Sair', destroy_user_session_path, :method => :delete, class: 'dropdown-item text-danger' %>
                   </div>
