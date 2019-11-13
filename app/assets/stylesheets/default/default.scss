@@ -79,15 +79,28 @@ header{
            width: 120px;
            height: 120px;
            border-radius: 50%;
-           margin: 50px;
+           margin: 20px;
          }
       }
 }
 
 .header-bottom{
-   height: 50px;
+   min-height: 50px;
    background: #fff;
    margin-bottom: 10px;
+   .dropdown{
+     margin-left: auto !important;
+   }
+}
+
+@media only screen and (max-width: 400px) {
+  header-bottom{
+     overflow: hidden;
+     text-align: left;
+     .dropdown{
+       float: left;
+     }
+   }
 }
 
 .card{
