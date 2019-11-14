@@ -26,21 +26,49 @@
                 <%= link_to 'Sair', destroy_user_session_path, :method => :delete, class: 'dropdown-item text-danger' %>
               </div>
            </div>
-          <% else %>
-            <form class="form-inline">
-              <a class="btn btn-outline-primary" href="/login" role="button">
-                Login
-              </a>
-              <div style="padding-left: 10px;">
-              <a class="btn btn-outline-success" href="/users/sign_out" role="button">
-              Sign Up
-              </a>
-              </div>
-            </form>
           <% end %>
           </div>
         </nav>
-        <%= yield %>
+        <% if current_user%>
+          <div class="container">
+            <div class="background">
+              <div class="col-md-3 col-xs-12">
+               <div class="header-perfil">
+                 <div class="circle">
+                  <%= image_tag('perfil.jpg', class: "avatar-perfil")%>
+                 </div>
+               </div>
+              </div>
+            </div>
+            <div class="header-bottom">
+              <div class="row" style="padding: 5px">
+                <div class="col-md-2">
+                  <a href="#" class="btn btn-lista">Imprimir Lista</a>
+                </div>
+                <div class="col-md-7 col-xs-12">
+                  <small>
+                     <strong> Local: </strong>Av. Comendador Thomaz Fortunato Nº 2000, Prai dos Namorados - Americana <br />
+                     <strong> Data do Evento: </strong> 15 de dezembro de 2019
+                  </small>
+                </div>
+                <div class="col-md-3">
+                  <ul class="nav navbar-nav list-car pull-right" style="margin-right:5px;">
+                   <li class="active cart">
+                     <%= render 'layouts/cart' %>
+                   </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h1 class="title">Lista do Chá da Ray</h1>
+            <hr />
+            <div class="row">
+               <%= yield %>
+             </div>
+           </div>
+          <% else %>
+             <%= yield %>
+          <% end %>
       </div>
   </body>
 </html>

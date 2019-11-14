@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'products/index'
   namespace :portal do
     get 'home', to: 'home#index'
-    resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :products
+    resources :order_items
+    resources :carts, only: [:show]
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }

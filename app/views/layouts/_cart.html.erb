@@ -1,0 +1,5 @@
+<%= link_to portal_cart_path(:id => "2") do %>
+  <%= fa_icon "shopping-cart", class: 'shopping-cart' %>&nbsp;
+  <span class="qtd">(<%= current_order.order_items.size%>)<span>
+  <strong class="total">Total</strong> R$<%= current_order.subtotal %>
+<% end %>

@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_125419) do
+ActiveRecord::Schema.define(version: 2019_11_14_140130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.float "unit_price"
+    t.integer "quantity"
+    t.float "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float "subtotal"
+    t.float "total"
+    t.float "tax"
+    t.float "shopping"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "description"
@@ -25,35 +44,6 @@ ActiveRecord::Schema.define(version: 2019_11_12_125419) do
     t.datetime "updated_at", null: false
     t.integer "code"
     t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "reserved_stocks", force: :cascade do |t|
-    t.integer "amount"
-    t.bigint "product_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_reserved_stocks_on_product_id"
-    t.index ["user_id"], name: "index_reserved_stocks_on_user_id"
-  end
-
-  create_table "stock_movements", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "user_id"
-    t.integer "amount"
-    t.string "type_movement"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_stock_movements_on_product_id"
-    t.index ["user_id"], name: "index_stock_movements_on_user_id"
-  end
-
-  create_table "stocks", force: :cascade do |t|
-    t.integer "amount"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_stocks_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,9 +63,4 @@ ActiveRecord::Schema.define(version: 2019_11_12_125419) do
   end
 
   add_foreign_key "products", "users"
-  add_foreign_key "reserved_stocks", "products"
-  add_foreign_key "reserved_stocks", "users"
-  add_foreign_key "stock_movements", "products"
-  add_foreign_key "stock_movements", "users"
-  add_foreign_key "stocks", "products"
 end

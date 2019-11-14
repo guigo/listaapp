@@ -57,9 +57,14 @@ header{
     padding-top: 5px;
     padding-left: 0px !important;
     a{
-       font-size: 18px;
+       font-size: 16px;
+       color: #6c757d;
+       text-decoration: none;
        :hover, :focus{
-        color:#ecbad2
+        color:#ecbad2;
+       }
+       .total{
+         color:#ecbad2 !important;
        }
      }
   }
