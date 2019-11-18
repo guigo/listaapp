@@ -25,6 +25,7 @@ header{
    border-bottom: 1px solid #ecbad2;
    background: #fff !important;
    margin-bottom: 30px;
+   max-height: 87px;
    a{
      text-decoration: none;
      color: #000;
@@ -38,6 +39,10 @@ header{
 .shopping-cart{
   font-size: 24px;
   color: #ecbad2;
+}
+
+.cart_item{
+   min-height: 600px;
 }
 
 .avatar{
@@ -71,8 +76,7 @@ header{
 }
 
 .background{
-      // background-image: url("https://lista.havan.com.br/Content/Images/casal-floresta.jpg");
-      background-image: url("http://tiamarlene.com.br/wp-content/uploads/2017/08/PapelParedeSiteCul.fw_.png");
+      background: url("http://tiamarlene.com.br/wp-content/uploads/2017/08/PapelParedeSiteCul.fw_.png") #fff;
       height: 200px;
       background-position: center;
       background-repeat: no-repeat;

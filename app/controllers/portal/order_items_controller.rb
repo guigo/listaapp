@@ -15,13 +15,13 @@ class Portal::OrderItemsController < PortalController
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attributes(order_item_params)
-    @order_items = @order_item.order_items
-    @product = Product.find(order_item_params[:product_id])
-    if @product.amount > 0
+    @order_items = current_order.order_items
+    # @product = Product.find(order_item_params[:product_id])
+    # if @product.amount > 0
        @order.save
-       @product.amount - 1
-       @product.save
-    end
+    #    @product.amount - 1
+    #    @product.save
+    # end
   end
 
   def destroy
@@ -29,8 +29,8 @@ class Portal::OrderItemsController < PortalController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
-    @product.amount - 1
-    @product.save
+    # @product.amount - 1
+    # @product.save
   end
 
   private

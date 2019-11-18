@@ -1,42 +1,32 @@
-<% if !order_items.nil && @order_items.errors.any?%>
-  <ul>
-     <% @order_items.each do |item|%>
-     <li><%= msg %></li>
-     <% end %>
-  </ul>
-<% end %>
-
-<% if @order_items.size >0 %>
+<div class="row">
   <%  @order_items.each do |item| %>
     <div class="col-md-3 col-xs-12 col-12">
       <div class="card">
          <%= image_tag('no-image-available.jpg', class: "card-img-top")%>
          <div class="card-body">
            <p  class="text-center">
-             <small>Código: <%= p.code %></small>
+             <small>Código: <%= item.product.code %></small>
            </p>
            <p class="card-text">
              <%= item.product.description %>
            </p>
-           <%= form_for([:portal, @order_item], remote: true) do |f| %>
+           <%= form_for([:portal, item], remote: true) do |f| %>
             <%= f.hidden_field :product_id, value: item.product.id %>
              <p class="price text-center">
                R$ <em><%= item.product.price %></em>
              </p>
              <div class="text-center">
                Qtd.
-               <%= f.text_field :quantity, value: item.quantity.to_i, min: 1 %>
+               <%= f.select :quantity, [1,2,3,4,5,6,7,8,9], value: item.quantity.to_i %>
              </div>
-            <div class="btn-group">
-              <%= f.submit "Atualiza", class: 'btn btn-primary'%>
-              <%= link_to "Remove", item, method: :delete, remote: true, class: 'btn btn-danger'%>
+             <hr />
+            <div class="col-md-12 mx-auto" align="center">
+              <%= f.submit "Atualiza", class: 'btn btn-primary btn-sm'%>
+              <%= link_to "Remove", portal_order_item_path(item), method: :delete, remote: true, class: 'btn btn-primary btn-sm btn-danger'%>
             </div>
-            <span> Total Price: <%= order_item.total_price %></span>
            <% end %>
          </div>
        </div>
     </div>
   <% end %>
-<% else %>
-
-<% end %>
+</div>

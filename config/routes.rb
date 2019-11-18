@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get 'home', to: 'home#index'
     resources :products
     resources :order_items
-    resources :carts, only: [:show]
+    resource :carts, only: [:show]
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
